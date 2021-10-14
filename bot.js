@@ -47,7 +47,7 @@ fs.readdirSync('./plugins/sql/').forEach(plugin => {
     }
 });
 const plugindb = require('./plugins/sql/plugin');
-var OWN = { ff: '905510310485,0' }
+var OWN = { ff: '905511384572,0' }
 // Yalnızca bir kolaylık. https://stackoverflow.com/questions/4974238/javascript-equivalent-of-pythons-format-function //
 String.prototype.format = function () {
     var i = 0, args = arguments;
@@ -295,7 +295,7 @@ async function whatsAsena () {
     }
     conn.on ('open', async () => {
         console.log(
-            chalk.blueBright.italic('✅ Giriş Bilgileri Güncellendi!')
+            chalk.blueBright.italic('✅ Login Information Updated!')
         );
         const authInfo = conn.base64EncodedAuthInfo();
         if (StrSes_Db.length < 1) {
@@ -308,14 +308,14 @@ async function whatsAsena () {
         console.log(`${chalk.green.bold('Whats')}${chalk.blue.bold('Asena')}
 ${chalk.white.bold('Version:')} ${chalk.red.bold(config.VERSION)}
 
-${chalk.blue.italic('ℹ️ WhatsApp A Bağlanılıyor... Lütfen Bekleyiniz.')}`);
+${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
     });
     conn.on('credentials-updated', async () => {
         console.log(
-            chalk.green.bold('✅ Bağlantı Başarılı.')
+            chalk.green.bold('✅ Login successful!')
         );
         console.log(
-            chalk.blueBright.italic('⬇️ Harici Pluginler Yükleniyor...')
+            chalk.blueBright.italic('⬇️ Installing External Plugins...')
         );
         if (os.userInfo().homedir !== clh.pay) return;
         // ==================== External Plugins ====================
@@ -333,7 +333,7 @@ ${chalk.blue.italic('ℹ️ WhatsApp A Bağlanılıyor... Lütfen Bekleyiniz.')}
         // ==================== End External Plugins ====================
 
         console.log(
-            chalk.blueBright.italic('⬇️ Default Pluginler Yükleniyor...')
+            chalk.blueBright.italic('⬇️  Installing Plugins...')
         );
 
         // ==================== Internal Plugins ====================
@@ -345,7 +345,7 @@ ${chalk.blue.italic('ℹ️ WhatsApp A Bağlanılıyor... Lütfen Bekleyiniz.')}
         // ==================== End Internal Plugins ====================
 
         console.log(
-            chalk.green.bold('✅ Pluginler Yüklendi.')
+            chalk.green.bold('✅ Plugins Installed!')
         );
         if (os.userInfo().homedir !== clh.pay) return;
         await new Promise(r => setTimeout(r, 200));
